@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예술창작활동지원 사업계획서</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- PDF 다운로드 버튼 -->
+        <button class="pdf-download-btn" onclick="downloadPDF()">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+            </svg>
+            PDF 다운로드
+        </button>
+        
+        <div class="slide-wrapper">
+            <!-- Slide 1: 제목 -->
+            <div class="slide active" id="slide-1">
+                <div class="slide-content">
+                    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                        <h1 class="main-title">2026년 예술창작활동지원 사업계획서</h1>
+                        <div class="project-title">
+                            <span class="project-name">⟪권력의 무게: 금지된 모형들과 침묵의 메아리⟫</span>
+                        </div>
+                        <div class="subtitle">
+                            <span>A트랙 (시각/입체·설치)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: 신청 사업 개요 -->
+            <div class="slide" id="slide-2">
+                <div class="slide-content">
+                    <h2>신청 사업 개요 및 명칭</h2>
+                    <div class="content-wrapper">
+                        <div class="overview-grid">
+                        <div class="overview-item">
+                            <span class="label">신청 사업명</span>
+                            <span class="value">⟪권력의 무게: 금지된 모형들과 침묵의 메아리⟫</span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="label">사업 구분</span>
+                            <span class="value">예술창작활동지원사업 A트랙 (소규모/실험)</span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="label">예술 분야</span>
+                            <span class="value">시각 / 입체/설치</span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="label">예상 기간</span>
+                            <span class="value">2026. 12. 01. ~ 12. 15. (2주간)</span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="label">예상 장소</span>
+                            <span class="value">서울 시내 대안공간 또는 비영리 전시장</span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="label">지원 형태</span>
+                            <span class="value">개인</span>
+                        </div>
+                        <div class="overview-item highlight">
+                            <span class="label">총 신청액</span>
+                            <span class="value">20,000,000원</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: 기획 의도 및 필요성 -->
+            <div class="slide" id="slide-3">
+                <div class="slide-content">
+                    <h2>기획 의도 및 필요성</h2>
+                    <div class="content-wrapper">
+                    <div class="content-section">
+                        <h3>1. 기획 의도</h3>
+                        <p>현재 우리 사회를 관통하는 <strong>부정부패 카르텔, 권력 남용, 그리고 은폐된 진실</strong>에 대한 예술적 비판과 공론화를 목표로 한다.</p>
+                        <p>보이지 않는 권력의 작동 방식과 그 무게가 시민의 삶에 미치는 영향을 <strong>입체 조형 및 설치 미술</strong>이라는 구체적인 형태로 가시화한다.</p>
+                        <div class="highlight-box">
+                            <p>예술적 은유와 상징을 통해 <strong>'애국 시민'</strong>의 주체적 인식을 촉발하고 비판적 담론 형성의 장을 마련</p>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <h3>2. 창작의 독창성 및 실험성</h3>
+                        <p>A트랙의 실험 정신에 맞춰, 정치적 메시지를 담은 <strong>'부정투표 모형 시리즈'</strong>와 같은 금지된 증거물의 형태를 차용하는 독창적인 접근을 시도한다.</p>
+                        <p>관람객의 그림자 등 참여 요소를 활용하여 권력의 무게가 곧 나의 책임임을 역설하는 참여형 설치 작업을 결합</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: 사업 내용 및 구성 -->
+            <div class="slide" id="slide-4">
+                <div class="slide-content">
+                    <h2>사업 내용 및 구성</h2>
+                    <div class="content-wrapper">
+                    <div class="content-section">
+                        <h3>주요 작품 구성 (총 3점)</h3>
+                        <div class="artwork-grid">
+                            <div class="artwork-item">
+                                <h4>1. '부정투표 모형 시리즈'</h4>
+                                <p>특정 사건을 은유하는 금지된 증거물 형태의 소형 입체 조형물</p>
+                                <p>대형 텍스트 설치물을 결합하여 권력의 부패 논리를 시각적으로 고발</p>
+                            </div>
+                            <div class="artwork-item">
+                                <h4>2. '카르텔의 그림자'</h4>
+                                <p>전시장 특정 공간에 설치되는 그림자 설치 작업</p>
+                                <p>관람객의 그림자가 카르텔의 형상을 완성하거나 왜곡하도록 설계</p>
+                            </div>
+                            <div class="artwork-item">
+                                <h4>3. '가짜 민주주의 제단'</h4>
+                                <p>일상적 오브제를 재구성하여 숭고함과 위선을 동시에 담은 제단 형태의 대형 설치물</p>
+                                <p>정치적 상징물에 대한 비판적 시선을 유도</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: 성과 지표 및 파급 효과 -->
+            <div class="slide" id="slide-5">
+                <div class="slide-content">
+                    <h2>성과 지표 및 파급 효과</h2>
+                    <div class="content-wrapper">
+                    <div class="content-section">
+                        <h3>성과지표 (KPI)</h3>
+                        <div class="kpi-table">
+                            <div class="kpi-row header">
+                                <span>구분</span>
+                                <span>성과지표</span>
+                                <span>목표치</span>
+                                <span>측정 방법</span>
+                            </div>
+                            <div class="kpi-row">
+                                <span>참여</span>
+                                <span>관람객 참여율</span>
+                                <span>40% 이상</span>
+                                <span>메시지/서명 참여 및 굿즈 수령 인원 통계</span>
+                            </div>
+                            <div class="kpi-row">
+                                <span>확산</span>
+                                <span>미디어/SNS 공유 및 언급 건수</span>
+                                <span>50건 이상</span>
+                                <span>해시태그 및 온라인 언급량 기록</span>
+                            </div>
+                            <div class="kpi-row">
+                                <span>담론</span>
+                                <span>타깃 관람객 심층 인터뷰 확보</span>
+                                <span>10건</span>
+                                <span>주제 전달력 및 사회적 논의 심층 분석</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <h3>파급 효과 및 공공성</h3>
+                        <div class="impact-items">
+                            <div class="impact-item">
+                                <strong>사회적 담론 촉진</strong>
+                                <p>'부정투표', '내란' 등 민감하고 중요한 사회 문제에 대해 <strong>'애국 시민'</strong>이라는 타깃층이 능동적으로 참여하고 논의를 확장하는 공론의 장을 제공</p>
+                            </div>
+                            <div class="impact-item">
+                                <strong>시각 예술의 사회 참여 확장</strong>
+                                <p>기존의 시각 예술이 다루기 어려워했던 시의성 강한 정치적 주제를 입체/설치라는 매체로 끌어들여 예술의 사회 참여 영역을 넓힌다</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: 관객 개발 및 홍보 계획 -->
+            <div class="slide" id="slide-6">
+                <div class="slide-content">
+                    <h2>관객 개발 및 홍보 계획</h2>
+                    <div class="content-wrapper">
+                    <div class="promotion-grid">
+                        <div class="promotion-item">
+                            <h3>타깃 집중 마케팅</h3>
+                            <p>타깃층인 <strong>'애국 시민'</strong>이 주로 활동하는 온라인 커뮤니티 및 소셜 미디어 그룹을 중심으로 <strong>시즈널 마케팅(Seasoned Marketing)</strong>을 진행</p>
+                            <p>메시지에 깊이 공감하는 관람객의 유입을 극대화</p>
+                        </div>
+                        <div class="promotion-item">
+                            <h3>참여 유도 굿즈 제작</h3>
+                            <p>개당 5,000원 상당의 <strong>굿즈(스티커, 배지 등)</strong>를 제작하여 관람객에게 배포</p>
+                            <p>단순 관람을 넘어 메시지 확산의 주체가 되도록 유도</p>
+                        </div>
+                        <div class="promotion-item">
+                            <h3>대화의 장 운영</h3>
+                            <p>전시 기간 중 1회 <strong>'작가-시민 대화의 장'</strong>을 운영</p>
+                            <p>프로젝트의 심층적인 의도를 공유하고 타깃 관람객과의 쌍방향 소통을 통해 주제에 대한 몰입도를 높인다</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: 추진 일정표 -->
+            <div class="slide" id="slide-7">
+                <div class="slide-content">
+                    <h2>추진 일정표</h2>
+                    <div class="content-wrapper">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">~ 2026. 09.</div>
+                            <div class="timeline-content">심층 리서치 및 디자인 최종 확정, 재료 수급 계획 수립</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026. 10. ~ 11.</div>
+                            <div class="timeline-content">작품 제작 및 조립 집중, 운영 코디네이터 계약 및 홍보 실행 (SNS/온라인 커뮤니티 마케팅)</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026. 12. (초)</div>
+                            <div class="timeline-content">전시장 대관 및 최종 설치 작업, 현장 운영 요원 배치</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026. 12. (중순)</div>
+                            <div class="timeline-content">전시 오픈 및 운영 (작가-시민 대화의 장)</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2027. 01. ~ 02.</div>
+                            <div class="timeline-content">결과보고서 작성, 정산 및 기록물 정리</div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: 예산 계획 -->
+            <div class="slide" id="slide-8">
+                <div class="slide-content">
+                    <h2>예산 계획 (총 20,000,000원)</h2>
+                    <div class="content-wrapper">
+                    <div class="budget-section">
+                        <div class="budget-category">
+                            <h3>I. 인건비 및 수당 <span class="budget-amount">7,500,000원 (37.5%)</span></h3>
+                            <div class="budget-items">
+                                <div class="budget-item">
+                                    <span>작가 사례비</span>
+                                    <span>3,000,000원</span>
+                                </div>
+                                <div class="budget-item">
+                                    <span>설치 보조 인건비</span>
+                                    <span>2,000,000원</span>
+                                </div>
+                                <div class="budget-item">
+                                    <span>운영 코디네이터</span>
+                                    <span>2,000,000원</span>
+                                </div>
+                                <div class="budget-item">
+                                    <span>현장 운영 요원</span>
+                                    <span>500,000원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="budget-category">
+                            <h3>II. 제작비 <span class="budget-amount">8,000,000원 (40.0%)</span></h3>
+                            <div class="budget-items">
+                                <div class="budget-item">
+                                    <span>재료 및 소모품비</span>
+                                    <span>4,000,000원</span>
+                                </div>
+                                <div class="budget-item">
+                                    <span>장비 임차료</span>
+                                    <span>1,000,000원</span>
+                                </div>
+                                <div class="budget-item">
+                                    <span>출력 및 인화비</span>
+                                    <span>3,000,000원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="budget-category">
+                            <h3>III. 사업운영비 <span class="budget-amount">4,500,000원 (22.5%)</span></h3>
+                            <div class="budget-items">
+                                <div class="budget-item">
+                                    <span>대관료 (전시장)</span>
+                                    <span>2,000,000원</span>
+                                </div>
+                                <div class="budget-item">
+                                    <span>홍보/인쇄물 제작비</span>
+                                    <span>700,000원</span>
+                                </div>
+                                <div class="budget-item">
+                                    <span>굿즈 제작 및 배포비</span>
+                                    <span>1,000,000원</span>
+                                </div>
+                                <div class="budget-item">
+                                    <span>운반 및 설치 용역비</span>
+                                    <span>800,000원</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-btn prev-btn" onclick="previousSlide()">‹</button>
+            <div class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">8</span>
+            </div>
+            <button class="nav-btn next-btn" onclick="nextSlide()">›</button>
+        </div>
+
+        <!-- Slide Indicators -->
+        <div class="slide-indicators">
+            <span class="indicator active" onclick="goToSlide(1)"></span>
+            <span class="indicator" onclick="goToSlide(2)"></span>
+            <span class="indicator" onclick="goToSlide(3)"></span>
+            <span class="indicator" onclick="goToSlide(4)"></span>
+            <span class="indicator" onclick="goToSlide(5)"></span>
+            <span class="indicator" onclick="goToSlide(6)"></span>
+            <span class="indicator" onclick="goToSlide(7)"></span>
+            <span class="indicator" onclick="goToSlide(8)"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

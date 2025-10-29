@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026년 청년예술지원 지원신청서</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="application-container">
+        <!-- PDF 다운로드 버튼 -->
+        <button class="pdf-download-btn" onclick="downloadPDF()">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+            </svg>
+            PDF 다운로드
+        </button>
+
+        <div class="form-wrapper">
+            <!-- 헤더 -->
+            <div class="header-section">
+                <div class="logo-area">
+                    <div class="logo-box">
+                        <div class="logo-text">서울</div>
+                        <div class="logo-subtext">ARTS&PARK</div>
+                    </div>
+                </div>
+                <div class="title-area">
+                    <h1>2026년 청년예술지원 지원신청서</h1>
+                </div>
+            </div>
+
+            <!-- 1. 신청개요 -->
+            <section class="form-section">
+                <div class="section-header">
+                    <span class="section-number">1.</span>
+                    <span class="section-title">신청개요</span>
+                    <span class="section-subtitle">*서울문화예술지원시스템(SCAS)과 동일하게 작성, 틀릴 시 결격처리</span>
+                </div>
+
+                <!-- 지원신청 주체 -->
+                <div class="form-group">
+                    <div class="group-title">지원신청 주체</div>
+                    <table class="info-table">
+                        <tr>
+                            <td class="label-cell">신청주체<br>(■ 표시)</td>
+                            <td class="content-cell">
+                                <div class="checkbox-group">
+                                    <label><input type="radio" name="applicant_type" value="individual" checked> 개인</label>
+                                    <label><input type="radio" name="applicant_type" value="group"> 단체</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">국적<br>(■ 표시)</td>
+                            <td class="content-cell">
+                                <div class="checkbox-group">
+                                    <label><input type="radio" name="nationality" value="korean" checked> 대한민국 국적</label>
+                                    <label><input type="radio" name="nationality" value="foreign"> 대한민국 국적이 아닌 개인</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">신청자(단체)명</td>
+                            <td class="content-cell">
+                                <input type="text" class="text-input" value="백종훈" placeholder="본명(단체명)으로 작성">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">대표자명</td>
+                            <td class="content-cell">
+                                <input type="text" class="text-input" placeholder="본명으로 작성(단체인 경우, 공동대표인 경우 '모두' 기재)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">활동명</td>
+                            <td class="content-cell">
+                                <input type="text" class="text-input" placeholder="본명과 활동명이 다를 경우에만 작성">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- 사업정보 -->
+                <div class="form-group">
+                    <div class="group-title">사업정보</div>
+                    <table class="info-table">
+                        <tr>
+                            <td class="label-cell">신청사업명</td>
+                            <td class="content-cell">
+                                <input type="text" class="text-input" value="《수렴의 궤적 : 우주적 순환의 시각적 인지》" placeholder="예) 온예 같은 개시①/창난세초지원시낙 등">
+                                <div class="note">※ 적절 충분 프로젝트명으로 기재</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">사업기간</td>
+                            <td class="content-cell">
+                                <div class="date-group">
+                                    <span>일정</span>
+                                    <input type="date" class="date-input" value="2026-06-10"> ~ <input type="date" class="date-input" value="2026-06-20">
+                                    <div class="note">※ 프로젝트 기간이 됨 - 일정으로 기재하며, 미정일 경우 대략 공개 일정 기재</div>
+                                </div>
+                                <div class="duration-group">
+                                    <span>일수</span>
+                                    <input type="number" class="number-input" value="11">일
+                                    <span>횟수</span>
+                                    <input type="number" class="number-input" value="1">회
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- 사업장소 -->
+                <div class="form-group">
+                    <div class="group-title">사업장소</div>
+                    <table class="info-table">
+                        <tr>
+                            <td class="label-cell">사업장소명</td>
+                            <td class="content-cell">
+                                <input type="text" class="text-input" value="청년예술청 화이트갤러리" placeholder="발표장소(예:돌아다닌, 시놓지하디하곤, 절낭세흘초-그례)등 등 장작장 예총공간상 기재">
+                                <div class="note">※신스시 새쪠 내 공간에서 진행하여 하며, 미정일 경우 트릅웃 고레/의뢰하는 공간명 기재</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- 저작권 -->
+                <div class="form-group">
+                    <div class="group-title">저작권</div>
+                    <table class="info-table">
+                        <tr>
+                            <td class="label-cell">저작권<br>(■ 표시)</td>
+                            <td class="content-cell">
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="copyright" value="original"> 소유(창작주체)/해당사항 없음</label>
+                                    <label><input type="checkbox" name="copyright" value="shared"> 사용 승인 확정</label>
+                                    <label><input type="checkbox" name="copyright" value="pending"> 협의 중</label>
+                                </div>
+                                <div class="note">※ 자작곡 물러 형안상 세굴 조명 시 사명 확주 중 제공된 콜어가 완료되다섯 새증 수정인 가능</div>
+                                <div class="note">※ 직품 놓응으 인 섬크 속수 시간에 해영느흘등 받으시 저랫만 사증 기능간 실으 제헤 현무</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- 주요내용 -->
+                <div class="form-group">
+                    <div class="group-title">주요내용</div>
+                    <table class="info-table">
+                        <tr>
+                            <td class="label-cell">프로젝트<br>주요내용</td>
+                            <td class="content-cell">
+                                <textarea class="textarea-input" rows="4" placeholder="※ 개력자시 프로젝트에 대해기 간단하개 작성 10줄 이내 (주제, 기획의도, 주요내용 등)">우리는 탄생과 죽음을 반복하는 거대한 시공간의 흐름 속 존재하지만, 이를 인지하지 못한 채 살아간다. 본 프로젝트는 렌티큘러 아트의 '관점(시각)에 따른 이미지의 변주'라는 고유 특성과 Touchdesigner 기반의 실시간 인터랙티브 미디어를 융합하여, 관객의 움직임에 따라 작품이 변화하는 '인지-경험 공간'을 구축한다. 관객은 자신의 움직임이 우주적 순환의 궤적에 참여하는 행위임을 깨닫고, 세상과 진리에 대한 통찰을 얻는 자기 반영적 몰입형 시각 경험을 제공하고자 한다. 이는 청년 예술가로서 기술과 철학을 융합하는 첫 단독 작품 발표를 목표로 한다.</textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 2. 2026년도 프로젝트 운영계획 -->
+            <section class="form-section">
+                <div class="section-header">
+                    <span class="section-number">2.</span>
+                    <span class="section-title">2026년도 프로젝트 운영계획</span>
+                </div>
+
+                <table class="criteria-table">
+                    <thead>
+                        <tr>
+                            <th class="criteria-col">구분</th>
+                            <th class="content-col">창작활동의 실현 가능성·충실성 / 예술성·독창성(65)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="criteria-cell">
+                                <div class="criteria-title">창작활동의 실현가능성/충실성</div>
+                                <div class="criteria-subtitle">(자유분야)</div>
+                                <div class="criteria-subtitle">새력상하는</div>
+                                <div class="criteria-subtitle">판별하기 창성</div>
+                            </td>
+                            <td class="content-cell">
+                                <div class="content-item">
+                                    <strong>창작활동의 실현가능성/충실성</strong>
+                                    <ul>
+                                        <li>프로젝트 실험 답밤인 구체성인 시 적절한가?</li>
+                                        <li>구성기호에서신 이율축둠에서 재초고 고편하고 있는가?</li>
+                                        <li>예술인 본 프로젝트를 실현할 역량을 고갈어 있는가?</li>
+                                    </ul>
+                                </div>
+                                <div class="content-item">
+                                    <strong>창작활동의 예술성/독창성</strong>
+                                    <ul>
+                                        <li>재줄인 최신향드인 예술안에 독창상을 시기신 있는가?</li>
+                                        <li>본 프로젝트를 통한 본인다민간 에속기법용와 차심다고 있는가?</li>
+                                    </ul>
+                                </div>
+                                <div class="content-item">
+                                    <strong>사업이해도 및 참여의지</strong>
+                                    <ul>
+                                        <li>전측시법상인 의하운 대상 이상기 있는가?</li>
+                                        <li>직접개고지엔 대선 수구음고 의기기 있는가?</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 2-1. 창작활동 세부내용 -->
+                <div class="subsection">
+                    <div class="subsection-title">2-1. 창작활동 세부내용</div>
+                    <div class="subsection-note">※ 도색, 그림, 시설 등 다양한 서양 시묘를 활용하여 작성하셔도 잘 첨보니다.</div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-title">☐ 프로젝트 내용</div>
+                        <div class="form-note">※ 해당 프로젝트는 어떤 주제와 내용을 담고 있는지 구체적으로 작성해 주세요. (예: 기후이니대체공, 시들시소 등)</div>
+                        <div class="form-note">※ 선정 후 프로젝트가 변경되는 경우 지원금 취소 또는 사업비 후 있으니 실현가능성을 고려하여 현실적으로 작성해 주시기 바랍니다.</div>
+                        <div class="content-box">
+                            <textarea class="textarea-large" rows="5" placeholder="프로젝트 내용을 구체적으로 작성해주세요.">주요 작품 구성:
+1. 렌티큘러 설치: 거대한 순환을 상징하는 비선형 렌티큘러 평면/입체 설치물 (복수 관점에 따라 이미지가 다르게 해석됨)
+2. 실시간 데이터 시각화: 관객의 움직임을 Touchdesigner로 포착하여 우주적 궤적의 '하나의 점'을 향해 나아가는 미디어 아트로 실시간 시각화
+3. Ambient 사운드스케이프: IDM/Ambient 사운드 디자인을 통해 몰입감을 극대화
+
+작품 목표: 인지의 비선형성이라는 철학적 주제를 매체 자체로 치환하는 개념적 정교함을 확보하고, 관객에게 단순한 미적 체험을 넘어 존재론적 사유를 유도하는 몰입형 시각 경험을 제공.</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-title">☐ 표현 방식</div>
+                        <div class="form-note">※ 주전달고서 하는 프로젝트가 구현방이 위해 어떤 표현 방법 및 관서은 사용할 것인지 여뜸 정한, 공단 구설직적, 움화 조직, 수상, 아상 등 등을 포함하여 구실적으로 작성해주세요.</div>
+                        <div class="form-note">※ 공선감새서 진액되는 곤제 대선 공선 의 디견 정례의 근활을 자론역시는 정공 곤푸 곤법ㄴ으싸 자선학적 재가의기 등 기초자진 간법떼럼 포율하여 작성해주시고 관왜밤니다.</div>
+                        <div class="form-note">※ 음역극, 창사무시뢰 등 음역구성의 내격 기초이 있는 경우 현격 및 구설 기희풀을 포함하여 작성목주시근 교열찮니다.</div>
+                        <div class="content-box">
+                            <textarea class="textarea-large" rows="5" placeholder="표현 방식을 구체적으로 작성해주세요."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-title">☐ 창작활동 과정</div>
+                        <div class="form-note">※ 창작활동을 구진하고 준바하는 과정에서 어떤 계혈을 거쳐서 수신한 에정에시 구서잭으로 작성해 주시요.</div>
+                        <div class="form-note">- 어떤 고리핀 정작의 과정이 있는지, 이를 통혀 어둑게 창작활동을 진획헌 계획어며, 어떤 것들 등 고서 하는지 등</div>
+                        <div class="form-note">- 구설 단계에서시 허고를 능담터 무주젓팍 실필 단체까지 창작활동 과정 내용을 포함하여 작성해주세요</div>
+                        <div class="content-box">
+                            <textarea class="textarea-large" rows="5" placeholder="창작활동 과정을 구체적으로 작성해주세요.">1단계 (2025. 11. ~ 2026. 2.): 작품 이미지 및 사운드 스케치, 렌티큘러 출력 파일 제작 및 기술 시뮬레이션(Touchdesigner/Unreal) 집중
+2단계 (2026. 3. ~ 5.): 렌티큘러 패널 출력 및 구조물 제작, 장비 대여 확정 및 기술 코디네이터와의 통합 세팅 및 리허설
+3단계 (2026. 6.): 청년예술청 설치 및 전시, 현장 운영 및 아티스트 토크 진행, 웹 아카이브 구축</textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 멘토링 활용계획 -->
+            <section class="form-section">
+                <div class="form-group">
+                    <div class="checkbox-title">☐ 멘토링 활용계획</div>
+                    <div class="form-note">※ 청년예술지원사업에서 사업기반 지원학업 등 멘토링 과정에 대한 활용계획을 작성해 주시요.</div>
+                    <div class="form-note">- 어멘 분야 언임자언 완료공에 멘토링, 완토정을 사업기초 과정에서 어떻개 도울 곤구기 가어니는저 등</div>
+                    
+                    <table class="mentoring-table">
+                        <thead>
+                            <tr>
+                                <th>분야</th>
+                                <th>희망멘토</th>
+                                <th>작품개발을 위한 멘토링 기대내용</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 진행일정 -->
+            <section class="form-section">
+                <div class="form-group">
+                    <div class="checkbox-title">☐ 진행일정</div>
+                    <div class="form-note">※ 예술활동을 위한 기회 위여, 리서치 완료공 여뜸 통보 등 프로젝트 진행 일정 계획을 작성해주시요.</div>
+                    <div class="form-note">※ 위 창작활용 과정은 요랍아어 작성하시던 된니다.</div>
+                    
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>일정</th>
+                                <th>주진내용</th>
+                                <th>비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" class="table-input" placeholder="2026.01"></td>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                                <td><input type="text" class="table-input"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="form-note">※ 발견내 닌칸 관린 구개/작정시어 작성하시면 됩니다.</div>
+                    <div class="form-note">※ 프로젝트의 구제성을 실현/능달 간닥을 위리 내용으로 잔칸 가능린 얻고으로 작성해시지 바랍니다.</div>
+                </div>
+            </section>
+
+            <!-- 본 프로젝트를 통해 향후 기대되는 점 -->
+            <section class="form-section">
+                <div class="form-group">
+                    <div class="checkbox-title">☐ 본 프로젝트를 통해 향후 기대되는 점</div>
+                    <div class="form-note">※ 신정 프로젝트기 예술기 내 유의미안 영흔를 주거나 관구 및 기저능 수 있는 요소기 있는지, 관공기예계 유의미안 앙흔는 기를 수 있는 요소기 있는지를 통감어으로 간등하기 위힌 부분입니다.</div>
+                    <div class="form-note">※ 예술활동을 통해 신늘무제게판에서예단해서 본헌, 냄휘시, 의본터야, 예술기예게 디간 앙향는 줄 수 있는시에 대해 작성해주시고 완무 을녀께해 족요 해현 프로젝트를 통해 등고서 어는 에측적 설허 등을 작성해주세요.</div>
+                    <div class="content-box">
+                        <textarea class="textarea-large" rows="5" placeholder="프로젝트를 통해 기대되는 점을 구체적으로 작성해주세요.">[정량적 성과]
+1. 전시 기간 내 총 관람객 800명 달성 (10일 기준)
+2. 미디어아트/IT/디자인 관련 커뮤니티(4곳 이상)에 프로젝트 상세 개발 과정 공유(온라인)
+3. 프로젝트의 기록을 담은 영구적인 웹 아카이브 구축
+
+[정성적 성과]
+1. 전시 만족도 설문 평균 4.5점 이상 (5점 만점)
+2. 관람객 90% 이상이 '작품을 통해 자신을 돌아보게 되었다'고 응답
+
+[파급 효과]
+- 기술-예술 융합 분야의 시도: 렌티큘러와 실시간 인터랙티브 미디어의 창의적 조합을 통해 새로운 시각예술의 방법론을 제시하며, 기술 중심의 청년 예술가에게 영감을 제공
+- 주제 의식의 확장: '세상에 대한 통찰'을 위해 인문학/철학 기반의 대중 강연을 주최하고 그 내용을 영상 콘텐츠로 제작하여 배포함으로써, 물리적 전시를 넘어선 사회적 담론을 형성</textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 프로젝트 참여자 -->
+            <section class="form-section">
+                <div class="form-group">
+                    <div class="checkbox-title">☐ 프로젝트 참여자</div>
+                    
+                    <div class="participant-section">
+                        <div class="participant-type">○ 총 참여자 수</div>
+                        <div class="participant-input">
+                            <input type="number" class="number-input" value="06">명
+                            <div class="note">※ 사업의 전체 규모을 파악하기 위해 주요간여자를 포함반 총 참여자 인원수를 작성해주세요.</div>
+                        </div>
+                    </div>
+
+                    <div class="participant-section">
+                        <div class="participant-type">○ 주요 참여자</div>
+                        <div class="form-note">※ 기획자/신분자/곤해자시 필수 즉성</div>
+                        <div class="form-note">※ 은픈, 지가, 베속 드라마뜨라고 기일 등을 프로젝트어 작성해주시요.</div>
+                        
+                        <table class="participant-table">
+                            <thead>
+                                <tr>
+                                    <th>연번</th>
+                                    <th>참여역할</th>
+                                    <th>성함</th>
+                                    <th>성별</th>
+                                    <th>연령</th>
+                                    <th>주요 활동 이력</th>
+                                    <th>참여여부</th>
+                                    <th>확정</th>
+                                    <th>협의 중</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input type="text" class="table-input" value="작가"></td>
+                                    <td><input type="text" class="table-input" value="백종훈" placeholder="신청자면/신메 디프즈간"></td>
+                                    <td><input type="text" class="table-input" value="남"></td>
+                                    <td><input type="text" class="table-input" value="28"></td>
+                                    <td><input type="text" class="table-input" value="프로젝트 총괄, 콘텐츠 제작, 기술 통합(Touchdesigner/Unreal), 사운드 디자인"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><input type="text" class="table-input" value="기술 코디네이터"></td>
+                                    <td><input type="text" class="table-input" value="미정"></td>
+                                    <td><input type="text" class="table-input" value="-"></td>
+                                    <td><input type="text" class="table-input" value="-"></td>
+                                    <td><input type="text" class="table-input" value="인터랙티브 센서 및 미디어 장비 전문 설치 및 운영 중 상시 유지 보수"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><input type="text" class="table-input" value="현장 운영 매니저"></td>
+                                    <td><input type="text" class="table-input" value="미정"></td>
+                                    <td><input type="text" class="table-input" value="-"></td>
+                                    <td><input type="text" class="table-input" value="-"></td>
+                                    <td><input type="text" class="table-input" value="전시 기간 중 전반적인 운영 관리, 관람객 안전 및 장비 상태 확인"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><input type="text" class="table-input" value="설치/운반 보조"></td>
+                                    <td><input type="text" class="table-input" value="미정 (3명)"></td>
+                                    <td><input type="text" class="table-input" value="-"></td>
+                                    <td><input type="text" class="table-input" value="-"></td>
+                                    <td><input type="text" class="table-input" value="구조물 설치 및 작품 운반 지원, 기록/웹 아카이브 구축"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="participant-notes">
+                            <div class="note">※ 수요 의한 라 점유 좌경인 부시○, 확정된 사앙 위금을 직성해주시요.</div>
+                            <div class="note">※ 독립 역팔에 독립 신인어르 미다하어 있지 영단 총하는 역단역팔의 역할 기때 및 성령에 미정 기뜸 라 심립 중등 부시○제수시요.</div>
+                            <div class="note">※ 무군하위의 구제성을 활력추지시회는 주요시스템 관달니다.</div>
+                            <div class="note">※ 선정 이후 주요 역이자기 은실가기 면격 시 지원을 좌논 또는 사업릴 수 있습니다.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2-2. 예산계획 -->
+            <section class="form-section">
+                <div class="subsection">
+                    <div class="subsection-title">2-2. 예산계획</div>
+                    <div class="subsection-note">*SCAS 신청개요의 총사업비/지원신청액 동일하게 작성</div>
+                    <div class="form-note">※ 심의서노 성작활동의 실현 가능성총실성 내각어 향덕 및 세한편 근여에 적절하시회 검토하기 위힌 내용입니다.</div>
+                    <div class="form-note">- 대신 편성 시 지원단 적절가능 역덕 및 정신서휴 관렴여서 어예 두절어들을 잘 고예 주시요.</div>
+                    <div class="form-note">- 신정주시는 거인서제내 지나더석 중 에정인고정보엔 대상에 례수는 에상안대 대어어 반드시 에정인고정보엔 가감 및 보험료분을 신펜해야마며, 전털탈고 수 신정서단에서 대신 수정 간냈 대상앙니다.</div>
+
+                    <!-- 총 사업비 -->
+                    <div class="budget-summary">
+                        <div class="budget-item">
+                            <span class="budget-label">○ 총 사업비</span>
+                            <span class="budget-amount">12,000,000원 (지원신청액 + 자부담 포함)</span>
+                            <div class="budget-note">※ 사업의 전체 규모을 파악하기 위해 지원신청액과 포함실 포함실 총 사업비를 작성해 주척요.</div>
+                        </div>
+                        
+                        <div class="budget-item">
+                            <span class="budget-label">○ 지원신청액</span>
+                            <span class="budget-amount">10,000,000원</span>
+                        </div>
+                    </div>
+
+                    <!-- 예산 세부내역 -->
+                    <table class="budget-table">
+                        <thead>
+                            <tr>
+                                <th>항목</th>
+                                <th>내역</th>
+                                <th>금액산출</th>
+                                <th>지원신청액</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>회계검토수수료</td>
+                                <td>[필수]회계검토수수료</td>
+                                <td>220,000원 X 1건</td>
+                                <td>220,000</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="6">인건비</td>
+                                <td>작가 인건비 (창작 및 총괄 기획)</td>
+                                <td>200,000원 X 10일 X 1명</td>
+                                <td>2,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>기술 코디네이터</td>
+                                <td>150,000원 X 6일</td>
+                                <td>900,000</td>
+                            </tr>
+                            <tr>
+                                <td>현장 운영 매니저</td>
+                                <td>100,000원 X 10일</td>
+                                <td>1,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>설치 보조 인력 (2명)</td>
+                                <td>100,000원 X 2일 X 2명</td>
+                                <td>400,000</td>
+                            </tr>
+                            <tr>
+                                <td>운반 보조 인력 (1명)</td>
+                                <td>100,000원 X 2일 X 1명</td>
+                                <td>200,000</td>
+                            </tr>
+                            <tr>
+                                <td>기록/웹 아카이브 (1명)</td>
+                                <td>100,000원 X 5일</td>
+                                <td>500,000</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">제작비</td>
+                                <td>재료비 (렌티큘러 제작)</td>
+                                <td>렌티큘러 필름 및 판넬 제작, 인쇄비</td>
+                                <td>1,500,000</td>
+                            </tr>
+                            <tr>
+                                <td>미디어 장비 대여료</td>
+                                <td>프로젝터, 센서, 컴퓨터 등 (10일 기준)</td>
+                                <td>1,500,000</td>
+                            </tr>
+                            <tr>
+                                <td>소품/구조물 제작비</td>
+                                <td>작품 설치를 위한 목공 구조물 및 기타 소품</td>
+                                <td>500,000</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">운영비</td>
+                                <td>홍보/인쇄비</td>
+                                <td>전시 포스터/리플렛/도록 인쇄 및 온라인 홍보</td>
+                                <td>700,000</td>
+                            </tr>
+                            <tr>
+                                <td>운반/설치 용역비</td>
+                                <td>대형 작품 운송 및 전문 설치 용역</td>
+                                <td>400,000</td>
+                            </tr>
+                            <tr>
+                                <td>기타 경비</td>
+                                <td>아티스트 토크 진행비, 다과, 소모품 등</td>
+                                <td>400,000</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><strong>합 계(지원신청액과 동일하게 작성)</strong></td>
+                                <td><strong>10,000,000</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 3. 기존활동 -->
+            <section class="form-section">
+                <div class="section-header">
+                    <span class="section-number">3.</span>
+                    <span class="section-title">기존활동</span>
+                </div>
+
+                <table class="criteria-table">
+                    <thead>
+                        <tr>
+                            <th class="criteria-col">구분</th>
+                            <th class="content-col">예술인(단체)의 성장가능성(35)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="criteria-cell">
+                                <div class="criteria-title">심의기준</div>
+                                <div class="criteria-subtitle">(자유분야)</div>
+                                <div class="criteria-subtitle">새력상하는</div>
+                                <div class="criteria-subtitle">판별하지 창성</div>
+                            </td>
+                            <td class="content-cell">
+                                <div class="content-item">
+                                    <strong>예술인(단체)의 성장 가능성</strong>
+                                    <ul>
+                                        <li>기존 완륭을 바뜰으로 완주 예컴울활을 지속적으로 변화 및 성장실을 줄 수 있는 가농성이 있는 지 에술기 있는가?(자경직), 자저, 정신, 설부 작승 이력 등)</li>
+                                        <li>직주 예솔인(단체)의 성장가능성이 있는가?</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 3-1. 예술인(단체) 소개 -->
+                <div class="subsection">
+                    <div class="subsection-title">3-1. 예술인(단체) 소개</div>
+                    <div class="subsection-note">*개인 신청자의 경우 개인에 대한 내용을, 단체 신청자의 경우 예술단체에 대한 내용으로 작성</div>
+                    <div class="form-note">※ 심의서노 중 예솔인(단체)의 성장가능성 관룹을 간등하기 위힌 내용입니다.</div>
+                    <div class="form-note">※ 신정주시의 직역, 수설 이력 등 걸적 니원의 작심 및아는 예솔활동에 대한 고관한그리시, 표현경소어 예솔인(단체)회시 수주원사지 하는 예솔적 기저먼 및 관사서어 내려 내용을 포함하여 작성하게 부시어 길어 심의에 도움이 됩니다.</div>
+                    
+                    <div class="content-box">
+                        <textarea class="textarea-large" rows="6" placeholder="예술인(단체) 소개를 구체적으로 작성해주세요.">저는 미디어아트와 인터랙티브 디자인을 통해 기술과 예술의 경계를 탐험하며 새로운 가치를 창출하는 데 몰두하고 있습니다. 특히 렌티큘러 아트와 같은 시각적 착시 현상과 Touchdesigner, Unreal Engine을 활용한 몰입형 경험 디자인에 매료되어, 보는 관점(인지)에 따라 다르게 해석되는 작품을 만들어가고 있습니다. 
+
+시각 예술, IDM/Ambient 사운드, 인터랙티브 미디어를 융합하여 물리적 공간과 디지털 영역을 아우르는 독창적인 결과물을 만들고, 관객의 참여를 통해 '탄생과 죽음의 순환'과 같은 우주적 주제에 대한 통찰을 얻도록 유도하는 것이 저의 핵심적인 예술적 가치관이자 탐구의식입니다.</textarea>
+                    </div>
+                </div>
+
+                <!-- 3-2. 주요 활동이력 -->
+                <div class="subsection">
+                    <div class="subsection-title">3-2. 주요 활동이력</div>
+                    <div class="subsection-note">*개인 신청자의 경우 개인에 대한 내용을, 단체 신청자의 경우 예술단체에 대한 내용으로 작성</div>
+                    
+                    <div class="portfolio-section">
+                        <div class="portfolio-item">
+                            <div class="portfolio-number">1</div>
+                            <div class="portfolio-content">
+                                <div class="portfolio-field">
+                                    <label>일시</label>
+                                    <input type="text" class="text-input" placeholder="프로젝트명">
+                                </div>
+                                <div class="portfolio-field">
+                                    <label>장소</label>
+                                    <input type="text" class="text-input" placeholder="참여 역할">
+                                    <div class="note">※ 기간의 경우만 작성</div>
+                                </div>
+                                <div class="portfolio-field full-width">
+                                    <label>주요내용 및 예술적 성취</label>
+                                    <div class="note">※ 최대 4건까지 작성해주세요.</div>
+                                    <div class="note">※ 심의서노 중 예솔인(단체)의 성장가능성 관룹을 간등하기 위힌 내용입니다. 이진 주요 활동내역 중 중요기능을 성취하여 전문하여 작성기능니다.</div>
+                                    <div class="note">※ 우기 신정자(단체) 소개에 작성하고 나 내용이 중복되어 수 있는 활동 위금을 작성해주셔요.</div>
+                                    <div class="note">※ 작성자실 활동이라고 관련한 장극유뜰부, 비마어, 드로와축스, 구진 드라이벤 등져 있다면 기매에서 시례숑저시 바랍니다.</div>
+                                    <textarea class="textarea-medium" rows="4" placeholder="주요 내용 및 예술적 성취를 작성해주세요."></textarea>
+                                </div>
+                                <div class="portfolio-field">
+                                    <label>링크(URL)</label>
+                                    <div class="note">- 신정자(단체)의 기례 활동여 내용을 즉각하기 어려홰 앙상 URL 재증응 지원 바랍니다.</div>
+                                    <div class="note">- 신정자(단체)가 및부 구발권 소예축련한 정리, 기록적 한달한 앙성 URL 사증으로 권전하나, 미다앙닥이 없는 경우 앞바죽이 부콘을 구실업으로 작성해주시기 바료니다. (에: 전체 앙상 중 3~40 수디 40분까지 촉간)</div>
+                                    <div class="note">- 한글 홀단이 발가용은 경우 간등하지 얻습니다. 호내응 주소로 연결하는지 확인 후린터이, 미캐부수가 있어야인 억어어 가충린 마저긱 깐근는 미캐부수도 함께 기재헤 주시기 바랍니다.</div>
+                                    <input type="url" class="text-input" placeholder="http://example.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <div class="portfolio-number">2</div>
+                            <div class="portfolio-content">
+                                <div class="portfolio-field">
+                                    <label>일시</label>
+                                    <input type="text" class="text-input" placeholder="프로젝트명">
+                                </div>
+                                <div class="portfolio-field">
+                                    <label>장소</label>
+                                    <input type="text" class="text-input" placeholder="참여 역할">
+                                    <div class="note">※ 기간의 경우만 작성</div>
+                                </div>
+                                <div class="portfolio-field full-width">
+                                    <label>주요내용 및 예술적 성취</label>
+                                    <textarea class="textarea-medium" rows="4" placeholder="주요 내용 및 예술적 성취를 작성해주세요."></textarea>
+                                </div>
+                                <div class="portfolio-field">
+                                    <label>링크(URL)</label>
+                                    <input type="url" class="text-input" placeholder="http://example.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <div class="portfolio-number">3</div>
+                            <div class="portfolio-content">
+                                <div class="portfolio-field">
+                                    <label>일시</label>
+                                    <input type="text" class="text-input" placeholder="프로젝트명">
+                                </div>
+                                <div class="portfolio-field">
+                                    <label>장소</label>
+                                    <input type="text" class="text-input" placeholder="참여 역할">
+                                    <div class="note">※ 기간의 경우만 작성</div>
+                                </div>
+                                <div class="portfolio-field full-width">
+                                    <label>주요내용 및 예술적 성취</label>
+                                    <textarea class="textarea-medium" rows="4" placeholder="주요 내용 및 예술적 성취를 작성해주세요."></textarea>
+                                </div>
+                                <div class="portfolio-field">
+                                    <label>링크(URL)</label>
+                                    <input type="url" class="text-input" placeholder="http://example.com">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

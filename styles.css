@@ -21,9 +21,9 @@ body {
 }
 
 .slide-wrapper {
-    width: 90vw;
-    max-width: 1200px;
-    aspect-ratio: 297/210; /* A4 가로 비율 */
+    width: 85vw;
+    max-width: 1000px;
+    aspect-ratio: 4/3; /* 4:3 표준 프레젠테이션 비율 */
     position: relative;
     background: white;
     border-radius: 8px;
@@ -43,7 +43,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px;
+    padding: 30px;
 }
 
 .slide.active {
@@ -59,45 +59,239 @@ body {
     flex-direction: column;
 }
 
-/* 제목 슬라이드 */
-.main-title {
-    font-size: 2.8rem;
-    font-weight: 300;
-    color: #2c2c2c;
+/* 헤더 섹션 */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.foundation-logo .logo-placeholder {
+    background: #f97316;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.document-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 표지 페이지 */
+.cover-content {
     text-align: center;
-    margin-bottom: 45px;
+    padding: 40px 0;
+}
+
+.notice-box {
+    background: #fee2e2;
+    border: 2px solid #dc2626;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.notice-box h2 {
+    color: #dc2626;
+    font-size: 1.5rem;
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.info-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.info-table {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row .label {
+    font-weight: 600;
+    color: #555;
+    background: #f0f0f0;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.info-row .value {
+    padding: 8px;
+    color: #333;
+}
+
+.warning-section {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.warning-section p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.red-text {
+    color: #dc2626 !important;
+    font-weight: 500;
+}
+
+.blue-text {
+    color: #2563eb !important;
+    font-weight: 500;
+}
+
+/* 양식 섹션 */
+.form-section {
+    flex: 1;
+    overflow: hidden;
+}
+
+.section-title {
+    background: #f97316;
+    color: white;
+    padding: 6px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* 신청자 정보 */
+.applicant-info, .project-info {
+    margin-bottom: 20px;
+}
+
+.applicant-info h4, .project-info h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.notice-text {
+    font-size: 0.7rem;
+    color: #666;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+/* 테이블 스타일 */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+}
+
+.info-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.red-label {
+    background: #fee2e2;
+    color: #dc2626;
+    font-weight: 600;
+    width: 150px;
+}
+
+.info-table small {
+    font-size: 0.7rem;
+    color: #666;
     line-height: 1.2;
 }
 
-.project-title {
-    text-align: center;
-    margin-bottom: 35px;
+/* 체크박스 섹션 */
+.checkbox-section {
+    margin: 15px 0;
 }
 
-.project-name {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    display: block;
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+.checkbox {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.checkbox-note {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.checkbox-options {
+    margin-left: 20px;
+}
+
+/* 트랙 테이블 */
+.track-table {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.track-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.7rem;
+}
+
+.track-table th, .track-table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    vertical-align: top;
     line-height: 1.3;
 }
 
-.subtitle {
+.track-table th {
+    background: #f5f5f5;
+    font-weight: 600;
     text-align: center;
-    font-size: 1.4rem;
-    color: #666;
-    font-weight: 300;
+    font-size: 0.75rem;
 }
 
-/* 일반 슬라이드 제목 */
-h2 {
-    font-size: 1.8rem;
+.track-label {
+    background: #f0f0f0;
     font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #e0e0e0;
-    padding-bottom: 12px;
-    flex-shrink: 0;
+    text-align: center;
+    width: 25px;
+    font-size: 0.8rem;
+}
+
+.checkbox-cell {
+    text-align: center;
+    font-size: 1rem;
+    width: 35px;
 }
 
 h3 {
@@ -312,52 +506,304 @@ strong {
     font-size: 0.9rem;
 }
 
-/* 예산 섹션 */
-.budget-section {
-    display: grid;
-    gap: 18px;
-    flex: 1;
-    overflow: hidden;
-    grid-template-rows: auto auto auto;
+/* 중요 정보 박스 */
+.important-note {
+    background: #f0f9ff;
+    border: 1px solid #0ea5e9;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 10px 0;
 }
 
-.budget-category {
-    background: #fafafa;
+.note-title {
+    font-weight: 600;
+    color: #0369a1;
+    margin-bottom: 6px;
+    font-size: 0.8rem;
+}
+
+.note-content {
+    font-size: 0.75rem;
+}
+
+.year-boxes {
+    color: #dc2626;
+    font-weight: 500;
+}
+
+/* A트랙 정보 */
+.a-track-info {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: 4px;
+    padding: 6px;
+    margin: 8px 0;
+}
+
+.info-title {
+    font-weight: 600;
+    color: #92400e;
+    margin-bottom: 4px;
+    font-size: 0.65rem;
+}
+
+.info-content {
+    font-size: 0.55rem;
+    line-height: 1.2;
+}
+
+.info-content p {
+    margin-bottom: 3px;
+}
+
+/* 창작활동 계획 테이블 */
+.creative-plan-table {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.creative-plan-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.7rem;
+}
+
+.creative-plan-table th, .creative-plan-table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    vertical-align: top;
+    line-height: 1.2;
+}
+
+.creative-plan-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+    text-align: center;
+}
+
+.plan-category {
+    background: #f9f9f9;
+    font-weight: 600;
+    text-align: center;
+    width: 80px;
+    font-size: 0.65rem;
+}
+
+.sub-category {
+    background: #fef3c7;
+    font-weight: 600;
+    padding: 4px;
+}
+
+/* 프로젝트 상세 */
+.project-details {
+    margin: 15px 0;
+}
+
+.project-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 6px;
-    padding: 18px;
-    border-left: 4px solid #999;
-}
-
-.budget-category h3 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-}
-
-.budget-amount {
-    font-size: 1rem;
-    color: #666;
-    font-weight: 400;
-}
-
-.budget-items {
-    display: grid;
-    gap: 6px;
-}
-
-.budget-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
+    padding: 15px;
     font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.project-box h4 {
+    color: #1e40af;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.project-box p {
+    margin-bottom: 10px;
+}
+
+/* 작가 정보 섹션 */
+.artist-info-section {
+    margin: 15px 0;
+}
+
+.info-note {
+    background: #f1f5f9;
+    border-left: 4px solid #3b82f6;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.not-applicable {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.na-box {
+    background: #f3f4f6;
+    border: 2px dashed #9ca3af;
+    padding: 20px;
+    border-radius: 8px;
+    color: #6b7280;
+}
+
+/* 일정 테이블 */
+.schedule-table-container {
+    margin: 15px 0;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.schedule-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+    text-align: center;
+}
+
+.schedule-table em {
+    color: #666;
+    font-style: italic;
+}
+
+.schedule-notes {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+/* 예산 관련 */
+.budget-notice {
+    margin: 10px 0;
+}
+
+.notice-box-small {
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.budget-summary {
+    margin: 15px 0;
+}
+
+.total-budget, .support-request {
+    display: grid;
+    grid-template-columns: 100px 1fr 120px;
+    gap: 10px;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.total-budget .label, .support-request .label {
+    background: #f0f0f0;
+    padding: 6px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.amount-value {
+    text-align: right;
+    font-weight: 600;
+    color: #dc2626;
+}
+
+.detailed-budget {
+    margin: 15px 0;
+}
+
+.budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+}
+
+.budget-table th, .budget-table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    vertical-align: top;
+}
+
+.budget-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+    text-align: center;
+}
+
+.highlight-row {
+    background: #fef3c7;
+}
+
+.budget-table em {
+    color: #666;
+    font-style: italic;
+}
+
+.budget-notes {
+    margin-top: 15px;
+    font-size: 0.75rem;
+    color: #666;
     line-height: 1.3;
 }
 
-.budget-item:last-child {
-    border-bottom: none;
+.budget-notes ul {
+    padding-left: 15px;
+}
+
+.budget-notes li {
+    margin-bottom: 4px;
+}
+
+/* 프로젝트 배경 콘텐츠 */
+.project-background {
+    margin: 15px 0;
+}
+
+.background-content {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.background-content h4 {
+    color: #1e40af;
+    margin: 15px 0 10px 0;
+    font-size: 0.95rem;
+    border-left: 4px solid #3b82f6;
+    padding-left: 10px;
+}
+
+.background-content h4:first-child {
+    margin-top: 0;
+}
+
+.background-content p {
+    margin-bottom: 12px;
+    color: #374151;
+}
+
+.background-content strong {
+    color: #1f2937;
+    font-weight: 600;
 }
 
 /* 네비게이션 */

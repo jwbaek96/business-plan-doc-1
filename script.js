@@ -1,5 +1,5 @@
 let currentSlide = 1;
-const totalSlides = 8;
+const totalSlides = 7;
 
 function showSlide(slideNumber) {
     // 모든 슬라이드 숨기기
@@ -152,7 +152,7 @@ function downloadPDF() {
         slide.style.transform = 'none';
         slide.style.display = 'block';
         slide.style.pageBreakAfter = index < slides.length - 1 ? 'always' : 'auto';
-        slide.style.height = '190mm'; // A4 가로 높이에 맞춤
+        slide.style.height = '210mm'; // 4:3 비율에 맞춘 높이
         slide.style.marginBottom = index < slides.length - 1 ? '10mm' : '0';
     });    const opt = {
         margin: [10, 10, 10, 10],
@@ -167,7 +167,7 @@ function downloadPDF() {
         jsPDF: { 
             unit: 'mm', 
             format: 'a4', 
-            orientation: 'landscape',
+            orientation: 'portrait',
             putOnlyUsedFonts: true,
             floatPrecision: 16
         },
@@ -221,20 +221,20 @@ function adjustSlideHeight() {
     const containerHeight = window.innerHeight;
     const containerWidth = window.innerWidth;
     
-    // A4 가로 비율 유지하면서 최적 크기 계산 (297:210)
-    const maxWidth = containerWidth * 0.9;
+    // 4:3 비율 유지하면서 최적 크기 계산
+    const maxWidth = containerWidth * 0.85;
     const maxHeight = containerHeight * 0.85;
     
     let width, height;
     
-    if (maxWidth / 297 * 210 <= maxHeight) {
+    if (maxWidth / 4 * 3 <= maxHeight) {
         // 너비 기준으로 계산
         width = maxWidth;
-        height = maxWidth / 297 * 210;
+        height = maxWidth / 4 * 3;
     } else {
         // 높이 기준으로 계산
         height = maxHeight;
-        width = maxHeight / 210 * 297;
+        width = height / 3 * 4;
     }
     
     slideWrapper.style.width = `${width}px`;
